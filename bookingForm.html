@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BookingForm</title>
+</head>
+<body>
+
+      <div class="page page-style-white"
+        data-page-controller="reservations"
+        data-scroll-anchor="reservations">
+
+        <div class="center">
+          <h2> Reservations </h2>
+          <p class="subtitle">Open for lunch from 11.30am Monday to Friday. Open for dinner Monday to Saturday from 5.30pm. Closed Sunday. Closed public holidays</p>
+
+          <div class="columns two">
+            <div class="column">
+              <p>Reservations recommended. Walk-ins are welcome.</p><p>To reserve a table please click 'Book Online' below or call us on 09&nbsp;909 7215.</p>
+            </div>
+
+            <div class="column">
+              <p>If you are redeeming a voucher, please enter the voucher number.<br></p><p>Please note online reservations are not confirmed until we have contacted you to confirm.</p>
+            </div>
+          </div>
+
+          <div class="action-button">
+            <button class="button" href="booking" data-lightbox="booking"> Book Online </button>
+          </div>
+        </div>
+
+        <div class="lightbox hidden" id="booking">
+          <div class="lightbox-content">
+            <form method="post" action="/enquiry" data-enquiry="reservations">
+              <h3> Make a Booking </h3>
+
+                  <input type="text" name="name"  class="required" placeholder=" Your nameName" />
+                  <input type="text" name="email" class="required email" placeholder="Email" />
+                  <input type="text" name="phone" class="required" placeholder="Mobile Number" />
+                  
+                </div>
+
+                <div class="column">
+                  <input type="text" name="date"  class="required" placeholder="Date" id="datepicker" />
+
+                  <select type="text" name="branch"  class="required" />
+					  <option value="5.30pm">Mt Eden</option>
+					  <option value="6.30pm">Victoria Park,Freemans Bay</option>
+				  </select>
+
+                  <select type="text" name="time"  class="required" />
+					  <option value="5.30pm">5.30pm</option>
+					  <option value="6.30pm">6.30pm</option>
+					  <option value="7.30pm">7.30pm</option>
+
+				  </select>
+
+
+                  <input type="text" name="party" class="required" placeholder="Number of People" />
+                </div>
+              </div>
+
+              <div class="row">
+                <textarea name="comment" placeholder="Comments" class="required"></textarea>
+              </div>
+
+              <div class="row final">
+                <div class="left"> <!--
+                  <input type="checkbox" name="join" id="join1" />
+                  <label for="join1" class="checkbox-label"> Join the One Tree Grill Mailing List </label>
+                  -->
+                </div>
+
+                <div class="right">
+                  <button class="button submit" type="submit"> Confirm </button>
+                </div>
+              </div>
+            </form>
+          </div> <!-- /.lightbox-content -->
+        </div> <!-- /.lightbox#booking -->
+      </div>
+
+
+
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+
+
+</body>
+</html>
+
